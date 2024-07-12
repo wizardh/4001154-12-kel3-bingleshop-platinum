@@ -1,4 +1,4 @@
-# Kelompok 3 - BEJ 12 Gold Challenge
+# Kelompok 3 - BEJ 12 Platinum Challenge
 
 For Binar BEJ Wave 12 Platinum Challenge
 
