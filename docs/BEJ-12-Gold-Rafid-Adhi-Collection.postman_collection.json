@@ -1,0 +1,388 @@
+{
+	"info": {
+		"_postman_id": "1fac6ad5-79a5-4af0-a603-85b202a95c6d",
+		"name": "BEJ-12-Gold-Rafid-Adhi-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "3149726"
+	},
+	"item": [
+		{
+			"name": "BingleShop",
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "35135103401sfadfas",
+								"type": "text"
+							}
+						],
+						"url": "localhost:2000/users"
+					},
+					"response": []
+				},
+				{
+					"name": "user by email",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "35135103401sfadfas",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2000/users/email/:email",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"users",
+								"email",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "adhi.wiradh@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "35135103401sfadfas",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2000/users/id/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"users",
+								"id",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Kuncen\",\n    \"email\": \"kuncen@gmail.com\",\n    \"password\": \"worsepass123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:2000/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"adhi.wiradh@gmail.com\",\n    \"password\": \"pass123s\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:2000/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "user update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"password\": \"123!@#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:2000/users/id/1"
+					},
+					"response": []
+				},
+				{
+					"name": "user delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "35135103401sfadfas",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2000/users/id/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"users",
+								"id",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:2000/items"
+					},
+					"response": []
+				},
+				{
+					"name": "items by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:2000/items/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"items",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "items create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Samsung Galaxy S99\",\n    \"price\": 99000000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:2000/items"
+					},
+					"response": []
+				},
+				{
+					"name": "items update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1,\n    \"price\": 9000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2000/items/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"items",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "items delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1,\n    \"price\": 9000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2000/items/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"items",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:2000/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "orders by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:2000/orders/2"
+					},
+					"response": []
+				},
+				{
+					"name": "orders create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" :  2,\n    \"item_id\": 3,\n    \"qty\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:2000/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "orders update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"status\": \"Diproses\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:2000/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "orders delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"status\": \"Diproses\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2000/orders/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"orders",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
