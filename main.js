@@ -75,12 +75,12 @@ app.delete("/orders/:id", orderHandler.delete);
 
 
 app.use((req, res, next) => {
-  res.status(404).send({
-    status: "fail",
-    message: "not found",
-  });
+    res.status(404).send({
+        status: "fail",
+        message: "not found",
+    });
 });
 
-app.listen(PORT, function () {
-  console.log(`Server berjalan pada http://localhost:${PORT}`);
+app.listen(PORT, function() {
+    console.log(`Server berjalan pada http://localhost:${PORT}`);
 });
