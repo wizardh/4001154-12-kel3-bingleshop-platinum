@@ -30,12 +30,6 @@ const router = express.Router();
 const authRouter = require('./src/router/auth');
 const userRouter = require('./src/router/user');
 
-// import middleware
-// const authMiddleware = require('./src/middleware/auth')
-
-// // User
-// app.get('/users', authMiddleware.authenticate, authMiddleware.checkUserIsJavid, userHandler.getAll);
-
 // Use router
 router.use('/auth', authRouter)
 router.use('/', userRouter)
@@ -49,7 +43,7 @@ app.use('/api', router)
 // app.post("/auth/login", authHandler.login);
 // app.post("/auth/register", authHandler.register);
 
-// User
+// User sudah dipindah ke router
 // const userService = new UserService(userRepository);
 // const userHandler = new UserHandler(userService);
 
