@@ -22,13 +22,24 @@ const OrderHandler = require("./src/handler/order");
 
 app.use(express.json());
 
-// Auth
 const userRepository = new UserRepository();
-const authService = new AuthService(userRepository);
-const authHandler = new AuthHandler(authService);
 
-app.post("/auth/login", authHandler.login);
-app.post("/auth/register", authHandler.register);
+const router = express.Router();
+
+// Import router
+const authRouter = require('./src/router/auth');
+
+// Use router
+router.use('/auth', authRouter)
+
+app.use('/api', router)
+
+// Auth sudah dipindah ke router
+// const authService = new AuthService(userRepository);
+// const authHandler = new AuthHandler(authService);
+
+// app.post("/auth/login", authHandler.login);
+// app.post("/auth/register", authHandler.register);
 
 // User
 const userService = new UserService(userRepository);
