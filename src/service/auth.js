@@ -49,13 +49,26 @@ class AuthService {
 
     async login({ email, password }) {
         const findUser = await this.userRepository.getByEmail(email);
+        const isValid = bcrypt.compareSync(password, findUser.password);
+
         if (findUser) {
-            if (findUser.password === password) {
+            if (isValid) {
+                const jwtSecret = 'SECRET';
+                const jwtExpireTime = '24h';
+
+                const token = jwt.sign({
+                        email: findUser.email,
+                    },
+                    jwtSecret, {
+                        expiresIn: jwtExpireTime,
+                    }
+                );
                 return {
                     statusCode: 200,
                     data: {
                         status: "success",
                         message: "Login berhasil",
+                        token: token
                     },
                 };
             } else {
@@ -64,6 +77,7 @@ class AuthService {
                     data: {
                         status: "error",
                         message: "Email atau password salah",
+                        token: null
                     },
                 };
             }
