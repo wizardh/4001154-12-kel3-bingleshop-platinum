@@ -28,9 +28,17 @@ const router = express.Router();
 
 // Import router
 const authRouter = require('./src/router/auth');
+const userRouter = require('./src/router/user');
+
+// import middleware
+// const authMiddleware = require('./src/middleware/auth')
+
+// // User
+// app.get('/users', authMiddleware.authenticate, authMiddleware.checkUserIsJavid, userHandler.getAll);
 
 // Use router
 router.use('/auth', authRouter)
+router.use('/', userRouter)
 
 app.use('/api', router)
 
@@ -42,14 +50,14 @@ app.use('/api', router)
 // app.post("/auth/register", authHandler.register);
 
 // User
-const userService = new UserService(userRepository);
-const userHandler = new UserHandler(userService);
+// const userService = new UserService(userRepository);
+// const userHandler = new UserHandler(userService);
 
-app.get("/users", userHandler.getAll);
-app.get("/users/email/:email", userHandler.getByEmail);
-app.get("/users/id/:id", userHandler.getById);
-app.patch("/users/id/:id", userHandler.update);
-app.delete("/users/id/:id", userHandler.delete);
+// app.get("/users", userHandler.getAll);
+// app.get("/users/email/:email", userHandler.getByEmail);
+// app.get("/users/id/:id", userHandler.getById);
+// app.patch("/users/id/:id", userHandler.update);
+// app.delete("/users/id/:id", userHandler.delete);
 
 // Item
 const itemRepository = new ItemRepository();
