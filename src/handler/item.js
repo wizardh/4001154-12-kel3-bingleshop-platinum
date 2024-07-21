@@ -30,7 +30,9 @@ class ItemHandler {
   }
 
   async update(req, res) {
-    const item = req.body;
+    const id = req.params.id;
+    let item = req.body;
+    item.id = id; // fix using id from param
     const serviceRes = await this.itemService.update(item);
 
     res.status(serviceRes.statusCode).send(serviceRes.data);
