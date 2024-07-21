@@ -30,7 +30,9 @@ class OrderHandler {
   }
 
   async update(req, res) {
-    const order = req.body;
+    const id = req.params.id;
+    let order = req.body;
+    order.id = id; // fix using id from param
     const serviceRes = await this.orderService.update(order);
 
     res.status(serviceRes.statusCode).send(serviceRes.data);
