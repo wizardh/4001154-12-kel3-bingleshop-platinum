@@ -29,52 +29,16 @@ const router = express.Router();
 // Import router
 const authRouter = require('./src/router/auth');
 const userRouter = require('./src/router/user');
+const itemRouter = require('./src/router/item');
+const orderRouter = require('./src/router/order');
 
 // Use router
 router.use('/auth', authRouter)
 router.use('/users', userRouter)
+router.use('/items', itemRouter)
+router.use('/orders', orderRouter)
 
 app.use('/api', router)
-
-// Auth sudah dipindah ke router
-// const authService = new AuthService(userRepository);
-// const authHandler = new AuthHandler(authService);
-
-// app.post("/auth/login", authHandler.login);
-// app.post("/auth/register", authHandler.register);
-
-// User sudah dipindah ke router
-// const userService = new UserService(userRepository);
-// const userHandler = new UserHandler(userService);
-
-// app.get("/users", userHandler.getAll);
-// app.get("/users/email/:email", userHandler.getByEmail);
-// app.get("/users/id/:id", userHandler.getById);
-// app.patch("/users/id/:id", userHandler.update);
-// app.delete("/users/id/:id", userHandler.delete);
-
-// Item
-const itemRepository = new ItemRepository();
-const itemService = new ItemService(itemRepository);
-const itemHandler = new ItemHandler(itemService);
-
-app.get("/items", itemHandler.getAll);
-app.get("/items/:id", itemHandler.getById);
-app.post("/items", itemHandler.create);
-app.patch("/items/:id", itemHandler.update);
-app.delete("/items/:id", itemHandler.delete);
-
-// Order
-const orderRepository = new OrderRepository();
-const orderService = new OrderService(orderRepository, itemRepository, userRepository);
-const orderHandler = new OrderHandler(orderService);
-
-app.get("/orders", orderHandler.getAll);
-app.get("/orders/:id", orderHandler.getById);
-app.post("/orders", orderHandler.create);
-app.patch("/orders", orderHandler.update);
-app.delete("/orders/:id", orderHandler.delete);
-
 
 app.use((req, res, next) => {
     res.status(404).send({

@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "1fac6ad5-79a5-4af0-a603-85b202a95c6d",
-		"name": "BEJ-12-Gold-Rafid-Adhi-Collection",
+		"_postman_id": "59139669-485e-49bb-a959-4a433474aa38",
+		"name": "BEJ12 Platinum",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "3149726"
 	},
@@ -20,7 +20,7 @@
 								"type": "text"
 							}
 						],
-						"url": "localhost:2000/users"
+						"url": "localhost:2000/api/users"
 					},
 					"response": []
 				},
@@ -36,12 +36,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:2000/users/email/:email",
+							"raw": "localhost:2000/api/users/email/:email",
 							"host": [
 								"localhost"
 							],
 							"port": "2000",
 							"path": [
+								"api",
 								"users",
 								"email",
 								":email"
@@ -68,12 +69,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:2000/users/id/:id",
+							"raw": "localhost:2000/api/users/id/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "2000",
 							"path": [
+								"api",
 								"users",
 								"id",
 								":id"
@@ -81,7 +83,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "2"
+									"value": "7"
 								}
 							]
 						}
@@ -95,14 +97,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Kuncen\",\n    \"email\": \"kuncen@gmail.com\",\n    \"password\": \"worsepass123\"\n}",
+							"raw": "{\n    \"name\": \"Santri\",\n    \"email\": \"santri@gmail.com\",\n    \"password\": \"12345\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "localhost:2000/auth/register"
+						"url": "localhost:2000/api/auth/register"
 					},
 					"response": []
 				},
@@ -113,14 +115,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"adhi.wiradh@gmail.com\",\n    \"password\": \"pass123s\"\n}",
+							"raw": "{\n    \"email\": \"adhi.wiradh@gmail.com\",\n    \"password\": \"123!@#s\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "localhost:2000/auth/login"
+						"url": "localhost:2000/api/auth/login"
 					},
 					"response": []
 				},
@@ -131,14 +133,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"password\": \"123!@#\"\n}",
+							"raw": "{\n    \"id\": 8,\n    \"password\": \"123!@#asas\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "localhost:2000/users/id/1"
+						"url": "localhost:2000/api/users/id/1"
 					},
 					"response": []
 				},
@@ -154,12 +156,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:2000/users/id/:id",
+							"raw": "localhost:2000/api/users/id/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "2000",
 							"path": [
+								"api",
 								"users",
 								"id",
 								":id"
@@ -179,7 +182,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:2000/items"
+						"url": "localhost:2000/api/items"
 					},
 					"response": []
 				},
@@ -189,19 +192,20 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:2000/items/:id",
+							"raw": "localhost:2000/api/items/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "2000",
 							"path": [
+								"api",
 								"items",
 								":id"
 							],
 							"variable": [
 								{
 									"key": "id",
-									"value": "3"
+									"value": "6"
 								}
 							]
 						}
@@ -215,14 +219,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\" : \"Samsung Galaxy S99\",\n    \"price\": 99000000\n}",
+							"raw": "{\n    \"name\" : \"POCO F5 Pro\",\n    \"price\": 5000000\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "localhost:2000/items"
+						"url": "localhost:2000/api/items"
 					},
 					"response": []
 				},
@@ -233,7 +237,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\" : 1,\n    \"price\": 9000\n}",
+							"raw": "{\n    \"price\": 124000\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -241,19 +245,20 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:2000/items/:id",
+							"raw": "localhost:2000/api/items/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "2000",
 							"path": [
+								"api",
 								"items",
 								":id"
 							],
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "6"
 								}
 							]
 						}
@@ -267,7 +272,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\" : 1,\n    \"price\": 9000\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -275,19 +280,20 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:2000/items/:id",
+							"raw": "localhost:2000/api/items/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "2000",
 							"path": [
+								"api",
 								"items",
 								":id"
 							],
 							"variable": [
 								{
 									"key": "id",
-									"value": "4"
+									"value": "6"
 								}
 							]
 						}
@@ -299,7 +305,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:2000/orders"
+						"url": "localhost:2000/api/orders"
 					},
 					"response": []
 				},
@@ -308,7 +314,24 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:2000/orders/2"
+						"url": {
+							"raw": "localhost:2000/api/orders/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"orders",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -319,14 +342,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_id\" :  2,\n    \"item_id\": 3,\n    \"qty\": 2\n}",
+							"raw": "{\n    \"user_id\" :  1,\n    \"item_id\": 5,\n    \"qty\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "localhost:2000/orders"
+						"url": "localhost:2000/api/orders"
 					},
 					"response": []
 				},
@@ -337,14 +360,31 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"status\": \"Diproses\"\n}",
+							"raw": "{\n    \"id\": 1,\n    \"status\": \"Ditolak\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "localhost:2000/orders"
+						"url": {
+							"raw": "localhost:2000/api/orders/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"orders",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -363,19 +403,20 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:2000/orders/:id",
+							"raw": "localhost:2000/api/orders/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "2000",
 							"path": [
+								"api",
 								"orders",
 								":id"
 							],
 							"variable": [
 								{
 									"key": "id",
-									"value": "2"
+									"value": "4"
 								}
 							]
 						}
