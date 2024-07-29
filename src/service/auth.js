@@ -49,9 +49,8 @@ class AuthService {
 
     async login({ email, password }) {
         const findUser = await this.userRepository.getByEmail(email);
-        const isValid = bcrypt.compareSync(password, findUser.password);
-
         if (findUser) {
+            const isValid = bcrypt.compareSync(password, findUser.password); // validate password after email found - Adhi
             if (isValid) {
                 const jwtSecret = 'SECRET';
                 const jwtExpireTime = '24h';

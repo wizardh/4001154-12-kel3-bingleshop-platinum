@@ -32,7 +32,7 @@ const userRouter = require('./src/router/user');
 
 // Use router
 router.use('/auth', authRouter)
-router.use('/', userRouter)
+router.use('/users', userRouter)
 
 app.use('/api', router)
 

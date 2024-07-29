@@ -13,10 +13,10 @@ const authMiddleware = require('../middleware/auth')
 
 const router = express.Router();
 
-router.get("/users", authMiddleware.authenticate, authMiddleware.checkUser, userHandler.getAll);
-router.get("/users/email/:email", userHandler.getByEmail);
-router.get("/users/id/:id", userHandler.getById);
-router.patch("/users/id/:id", userHandler.update);
-router.delete("/users/id/:id", userHandler.delete);
+router.get("/", authMiddleware.authenticate, authMiddleware.checkUser, userHandler.getAll);
+router.get("/email/:email", userHandler.getByEmail);
+router.get("/id/:id", userHandler.getById);
+router.patch("/id/:id", userHandler.update);
+router.delete("/id/:id", userHandler.delete);
 
 module.exports = router;
