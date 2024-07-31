@@ -23,6 +23,7 @@ class ItemRepository {
     const newItem = await ItemModel.create({
       name: item.name,
       price: item.price,
+      image: item.image
     });
 
     return newItem;
@@ -30,7 +31,10 @@ class ItemRepository {
 
   async update(item) {
     const updatedItem = await ItemModel.update(
-      { price: item.price },
+      { 
+        price: item.price,
+        image: item.image
+      },
       {
         where: {
           id: item.id,

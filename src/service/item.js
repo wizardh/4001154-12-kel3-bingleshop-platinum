@@ -31,10 +31,9 @@ class ItemService {
     }
   }
 
-  async create({ name, price }) {
+  async create({ name, price, image }) {
     // validasi input
-    console.log(typeof price);
-    if (!name || !price || typeof price != "number") {
+    if (!name || !price || typeof price != "number" || !image) {
       return {
         statusCode: 400,
         data: {
@@ -47,6 +46,7 @@ class ItemService {
     let newData = {
       name: name,
       price: price,
+      image: image
     };
 
     const createdItem = await this.itemRepository.add(newData);
@@ -56,7 +56,7 @@ class ItemService {
     };
   }
 
-  async update({ id, price }) {
+  async update({ id, price, image }) {
     // validasi input id
     const findItem = await this.itemRepository.getById(id);
     if (!findItem) {
@@ -69,10 +69,13 @@ class ItemService {
       };
     }
 
-    let newData = {
-      id: id,
-      price: price,
-    };
+    let newData = { id: id };
+    if (price !== null) {
+      newData.price = price;
+    }
+    if (image !== null) {
+      newData.image = image;
+    }
 
     const updatedItem = await this.itemRepository.update(newData);
     if (updatedItem > 0) {
