@@ -31,12 +31,14 @@ const authRouter = require('./src/router/auth');
 const userRouter = require('./src/router/user');
 const itemRouter = require('./src/router/item');
 const orderRouter = require('./src/router/order');
+const fileRouter = require('./src/router/file');
 
 // Use router
 router.use('/auth', authRouter)
 router.use('/users', userRouter)
 router.use('/items', itemRouter)
 router.use('/orders', orderRouter)
+router.use('/file', fileRouter)
 
 app.use('/api', router)
 
