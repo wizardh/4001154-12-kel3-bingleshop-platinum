@@ -8,14 +8,14 @@
   },
   "test": {
     "username": "postgres",
-    "password": "root",
+    "password": "admin",
     "database": "platinum_challenge",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
-    "password": "root",
+    "password": "admin",
     "database": "platinum_challenge",
     "host": "127.0.0.1",
     "dialect": "postgres"
