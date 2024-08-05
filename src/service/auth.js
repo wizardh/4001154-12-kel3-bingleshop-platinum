@@ -90,6 +90,17 @@ class AuthService {
     async login({ email, password }) {
         const findUser = await this.userRepository.getByEmail(email);
         if (findUser) {
+            const isVerified = findUser.verified;
+            if (!isVerified){
+                return {
+                    statusCode: 400,
+                    data: {
+                        status: "error",
+                        message: "Email belum diverifikasi!",
+                        token: null
+                    },
+                };
+            }
             const isValid = bcrypt.compareSync(password, findUser.password); // validate password after email found - Adhi
             if (isValid) {
                 const jwtSecret = 'SECRET';
