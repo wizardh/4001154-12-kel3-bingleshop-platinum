@@ -14,10 +14,13 @@ const orderRepository = new OrderRepository();
 const orderService = new OrderService(orderRepository, itemRepository, userRepository);
 const orderHandler = new OrderHandler(orderService);
 
-router.get("/", orderHandler.getAll);
-router.get("/:id", orderHandler.getById);
-router.post("/", orderHandler.create);
-router.patch("/:id", orderHandler.update);
-router.delete("/:id", orderHandler.delete);
+// import middleware
+const authMiddleware = require('../middleware/auth')
+
+router.get("/", authMiddleware.authenticate, authMiddleware.checkRoleUser, orderHandler.getAll);
+router.get("/:id", authMiddleware.authenticate, authMiddleware.checkRoleUser, orderHandler.getById);
+router.post("/", authMiddleware.authenticate, authMiddleware.checkRoleUser, orderHandler.create);
+router.patch("/:id", authMiddleware.authenticate, authMiddleware.checkRoleUser, orderHandler.update);
+router.delete("/:id", authMiddleware.authenticate, authMiddleware.checkRoleUser, orderHandler.delete);
 
 module.exports = router;
