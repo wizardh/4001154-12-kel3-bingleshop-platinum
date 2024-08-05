@@ -10,11 +10,14 @@ const itemRepository = new ItemRepository();
 const itemService = new ItemService(itemRepository);
 const itemHandler = new ItemHandler(itemService);
 
-router.get("/", itemHandler.getAll);
-router.get("/:id", itemHandler.getById);
-router.post("/", itemHandler.create);
-router.patch("/:id", itemHandler.update);
-router.delete("/:id", itemHandler.delete);
+// import middleware
+const authMiddleware = require('../middleware/auth')
+
+router.get("/", authMiddleware.authenticate, authMiddleware.checkRoleUser, itemHandler.getAll);
+router.get("/:id", authMiddleware.authenticate, authMiddleware.checkRoleUser, itemHandler.getById);
+router.post("/", authMiddleware.authenticate, authMiddleware.checkRoleAdmin, itemHandler.create);
+router.patch("/:id", authMiddleware.authenticate, authMiddleware.checkRoleAdmin, itemHandler.update);
+router.delete("/:id", authMiddleware.authenticate, authMiddleware.checkRoleAdmin, itemHandler.delete);
 
 
 module.exports = router;
