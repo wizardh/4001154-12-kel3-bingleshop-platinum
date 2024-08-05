@@ -15,8 +15,8 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "user-token",
-								"value": "35135103401sfadfas",
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaGkud2lyYWRoQGdtYWlsLmNvbSIsImlhdCI6MTcyMTY1ODY1NiwiZXhwIjoxNzIxNzQ1MDU2fQ.Hc2s9W2yIu1Qa0TNWZt1sxyPOuNtmxnDYTs50fmsjAw",
 								"type": "text"
 							}
 						],
@@ -97,7 +97,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Santri\",\n    \"email\": \"santri@gmail.com\",\n    \"password\": \"12345\"\n}",
+							"raw": "{\n    \"name\": \"Adhi\",\n    \"email\": \"adhi.wiradh@gmail.com\",\n    \"password\": \"12345\",\n    \"role\": \"admin\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -109,13 +109,31 @@
 					"response": []
 				},
 				{
+					"name": "verify",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"adhi.wiradh@gmail.com\",\n    \"code\": \"817340\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:2000/api/auth/verify"
+					},
+					"response": []
+				},
+				{
 					"name": "login",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"adhi.wiradh@gmail.com\",\n    \"password\": \"123!@#s\"\n}",
+							"raw": "{\n    \"email\": \"adhi.wiradh@gmail.com\",\n    \"password\": \"12345\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -219,7 +237,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\" : \"POCO F5 Pro\",\n    \"price\": 5000000\n}",
+							"raw": "{\n    \"name\" : \"POCO F5 Pro\",\n    \"price\": 5000000,\n    \"image\": \"https://res.cloudinary.com/dm3myqxdy/image/upload/v1722438321/zfbmtmv3n1djuoj7tku2.jpg\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -237,7 +255,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"price\": 124000\n}",
+							"raw": "{\n    \"price\": 2500000,\n    \"image\": \"https://res.cloudinary.com/dm3myqxdy/image/upload/v1722438321/zfbmtmv3n1djuoj7tku2.jpg\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -258,7 +276,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "6"
+									"value": "1"
 								}
 							]
 						}
@@ -293,7 +311,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "6"
+									"value": "1"
 								}
 							]
 						}
@@ -420,6 +438,25 @@
 								}
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "file upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/aya/Downloads/poco5.jpg"
+								}
+							]
+						},
+						"url": "localhost:2000/api/file/upload"
 					},
 					"response": []
 				}

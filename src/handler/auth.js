@@ -4,6 +4,8 @@ class AuthHandler {
 
     this.register = this.register.bind(this);
     this.login = this.login.bind(this);
+    this.verify = this.verify.bind(this);
+
   }
 
   async register(req, res) {
@@ -22,6 +24,16 @@ class AuthHandler {
     
     res.status(serviceRes.statusCode).send(serviceRes.data);
   }
+
+  async verify(req, res) {
+    const verificationCreds = {
+      email: req.body["email"],
+      code: req.body["code"],
+    };
+    const serviceRes = await this.authService.verify(verificationCreds);
+    
+    res.status(serviceRes.statusCode).send(serviceRes.data);
+  }  
 }
 
 module.exports = AuthHandler;

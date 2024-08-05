@@ -34,6 +34,9 @@ class UserRepository {
       name: user.name,
       email: user.email,
       password: user.password,
+      role: user.role,
+      verification_code: user.verification_code,
+      verified: 0
     });
     return newUser;
   }
