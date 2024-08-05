@@ -18,11 +18,17 @@ class Auth {
 
         // 3. validate token
         const jwtSecret = 'SECRET';
-        const payload = jwt.verify(token, jwtSecret)
+        const payload = jwt.verify(token, jwtSecret);
+        req.token = payload;
 
-        req.userEmail = payload.email
-
-        next();
+        if (!payload.verified) {
+            return res.status(401).send({
+                message: 'User belum diverifikasi',
+                data: null,
+            });
+        } else {
+            next();
+        }
     }
 
     static checkUser(req, res, next) {
@@ -37,6 +43,45 @@ class Auth {
         }
 
     }
+
+    static checkRoleUser(req, res, next) {
+        // req.token dari authenticate
+        if (!req.token) {
+            return res.status(401).send({
+                message: 'Anda tidak memiliki akses',
+                data: null,
+            });
+        }
+
+        const userRole = req.token.role;
+        if (userRole === 'admin' || userRole === 'user') {
+            next();
+        } else {
+            return res.status(401).send({
+                message: 'Anda tidak memiliki akses',
+                data: null,
+            });
+        }
+    }    
+
+    static checkRoleAdmin(req, res, next) {
+        if (!req.token) {
+            return res.status(401).send({
+                message: 'Anda tidak memiliki akses',
+                data: null,
+            });
+        }
+
+        const userRole = req.token.role;
+        if (userRole === 'admin') {
+            next();
+        } else {
+            return res.status(401).send({
+                message: 'Anda tidak memiliki akses',
+                data: null,
+            });
+        }
+    }    
 }
 
 module.exports = Auth;

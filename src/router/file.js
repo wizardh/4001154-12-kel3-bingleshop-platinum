@@ -10,7 +10,10 @@ const router = express.Router();
 const fileService = new FileService();
 const fileHandler = new FileHandler(fileService);
 
+// import middleware
+const authMiddleware = require('../middleware/auth')
+
 // key di body: file
-router.post('/upload', uploadMemory.single("file"), (req, res) => fileHandler.upload(req, res));
+router.post('/upload', authMiddleware.authenticate, authMiddleware.checkRoleUser, uploadMemory.single("file"), (req, res) => fileHandler.upload(req, res));
 
 module.exports = router;

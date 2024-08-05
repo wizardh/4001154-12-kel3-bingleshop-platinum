@@ -43,7 +43,10 @@ class UserRepository {
 
   async update(user) {
     const updatedUser = await UserModel.update(
-      { password: user.password },
+      { 
+        password: user.password,
+        verified: user.verified
+      },
       {
         where: {
           id: user.id,
