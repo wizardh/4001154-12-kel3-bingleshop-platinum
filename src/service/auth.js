@@ -108,6 +108,8 @@ class AuthService {
 
                 const token = jwt.sign({
                         email: findUser.email,
+                        role: findUser.role,
+                        verified: findUser.verified
                     },
                     jwtSecret, {
                         expiresIn: jwtExpireTime,
@@ -149,7 +151,7 @@ class AuthService {
             if (isValid) {
                 let updateVerified = {
                     id: findUser.id,
-                    verified: 1,
+                    verified: true,
                 };
                 await this.userRepository.update(updateVerified);
               
