@@ -2,9 +2,10 @@
   "name": "challenge",
   "version": "1.0.0",
   "description": "challenge gold Adhi W",
-  "main": "main.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon main.js"
+    "start": "nodemon server.js",
+    "test": "jest"
   },
   "author": "Adhi W",
   "license": "ISC",

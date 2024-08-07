@@ -65,6 +65,16 @@ class UserRepository {
 
     return deletedUser;
   }
+
+  async deleteByEmail(email) {
+    const deletedUser = await UserModel.destroy({
+      where: {
+        email: email,
+      },
+    });
+
+    return deletedUser;
+  }  
 }
 
 module.exports = UserRepository;
