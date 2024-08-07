@@ -45,6 +45,7 @@ class UserRepository {
     const updatedUser = await UserModel.update(
       { 
         password: user.password,
+        role: user.role,
         verified: user.verified
       },
       {
