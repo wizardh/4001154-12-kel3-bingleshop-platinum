@@ -53,7 +53,7 @@ class UserService {
   async update({ id, password }) {
     // validasi input id
     const findUser = await this.userRepository.getById(id);
-    if (findUser.length == 0) {
+    if (!findUser) {
       return {
         statusCode: 400,
         data: {
