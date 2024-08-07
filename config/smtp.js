@@ -3,8 +3,8 @@ const smtp = {
   port: "465",
   secure: true,
   auth: {
-    user: "",
-    pass: ""
+    user: "kelompok3.bej12@gmail.com",
+    pass: "ejjw veyg dnjz kcji"
   }
 };
 
