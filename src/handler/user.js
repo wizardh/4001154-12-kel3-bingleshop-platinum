@@ -27,8 +27,10 @@ class UserHandler {
   }
 
   async update(req, res) {
-    const order = req.body;
-    const serviceRes = await this.userService.update(order);
+    const id = req.params.id;
+    let user = req.body;
+    user.id = id;
+    const serviceRes = await this.userService.update(user);
 
     res.status(serviceRes.statusCode).send(serviceRes.data);
   }
