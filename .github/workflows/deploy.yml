@@ -45,7 +45,8 @@ jobs:
           git pull origin main
           /home/kelompok3_bej12/.nvm/versions/node/v22.6.0/bin/npm install
           /home/kelompok3_bej12/.nvm/versions/node/v22.6.0/bin/npx sequelize-cli db:migrate
-          /home/kelompok3_bej12/.nvm/versions/node/v22.6.0/bin/pm2 restart all
+          /home/kelompok3_bej12/.nvm/versions/node/v22.6.0/bin/pm2 stop server.js -n platinum
+          /home/kelompok3_bej12/.nvm/versions/node/v22.6.0/bin/pm2 start server.js -n platinum
 
     - name: Notify Deployment Success
       run: echo "Deployment to GCP VM successful!"
