@@ -6,22 +6,33 @@ on:
       - main  # Deploy when code is pushed to the 'main' branch
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    uses: appleboy/ssh-action@v0.1.7
+
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # Use the version of Node.js your project requires
+
+    - name: Install dependencies
+      run: npm install
+
     - name: Deploy to GCP VM
+      uses: appleboy/ssh-action@v0.1.7
       with:
         host: ${{ secrets.GCP_VM_IP }}  # GCP VM IP address stored in secrets
         username: ${{ secrets.GCP_VM_USER }}  # SSH user name stored in secrets
         key: ${{ secrets.GCP_SSH_KEY }}  # Private SSH key stored in secrets
         port: 22  # Default SSH port
         script: |
-          cd /path/to/your/app  # Navigate to your app's directory on the VM
+          cd /home/kelompok3_bej12/platinum
           git pull origin main  # Pull the latest code
           npm install  # Install updated dependencies
-          npm run build  # Build the project if necessary
-          pm2 start server.js -n platinum
+          npx sequelize-cli db:migrate #Migrate db if any
           pm2 restart all  # Restart the application (if using PM2)
 
     - name: Notify Deployment Success
