@@ -1,4 +1,4 @@
-name: Deploy Kelompok 3 Platinum Challenge CI/CD
+name: Deploy Kelompok 3 Platinum Challenge 
 
 on:
   push:
