@@ -1,0 +1,28 @@
+name: Deploy Kelompok 3 Platinum Challenge
+
+on:
+  push:
+    branches:
+      - main  # Deploy when code is pushed to the 'main' branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy to GCP VM
+      with:
+        host: ${{ secrets.GCP_VM_IP }}  # GCP VM IP address stored in secrets
+        username: ${{ secrets.GCP_VM_USER }}  # SSH user name stored in secrets
+        key: ${{ secrets.GCP_SSH_KEY }}  # Private SSH key stored in secrets
+        port: 22  # Default SSH port
+        script: |
+          cd /path/to/your/app  # Navigate to your app's directory on the VM
+          git pull origin main  # Pull the latest code
+          npm install  # Install updated dependencies
+          npm run build  # Build the project if necessary
+          pm2 start server.js -n platinum
+          pm2 restart all  # Restart the application (if using PM2)
+
+    - name: Notify Deployment Success
+      run: echo "Deployment to GCP VM successful!"
