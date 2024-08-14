@@ -24,8 +24,8 @@ jobs:
     - name: Deploy to GCP VM
       uses: appleboy/ssh-action@v0.1.7
       with:
-        host: ${{ secrets.GCP_VM_IP }}  # GCP VM IP address stored in secrets
-        username: ${{ secrets.GCP_VM_USER }}  # SSH user name stored in secrets
+        host: 34.101.72.251 #${{ secrets.GCP_VM_IP }}  # GCP VM IP address stored in secrets
+        username: kelompok3.bej12 #${{ secrets.GCP_VM_USER }}  # SSH user name stored in secrets
         key: ${{ secrets.GCP_SSH_KEY }}  # Private SSH key stored in secrets
         port: 22  # Default SSH port
         script: |
