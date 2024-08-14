@@ -23,6 +23,10 @@ jobs:
         curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
         sudo apt-get install -y nodejs
         sudo npm install -g pm2
+        export PATH=$PATH:/usr/local/bin
+        node -v
+        npm -v
+        pm2 -v
 
     - name: Deploy to GCP VM
       uses: appleboy/ssh-action@v0.1.7
@@ -33,7 +37,7 @@ jobs:
         port: 22
         script: |
           export PATH=$PATH:/usr/local/bin
-          cd /home/***/platinum
+          cd /home/kelompok3_bej12/platinum
           git pull origin main
           npm install
           npx sequelize-cli db:migrate
