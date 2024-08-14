@@ -13,29 +13,31 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
+    - name: Set up SSH agent and add SSH key
+      uses: webfactory/ssh-agent@v0.5.3
       with:
-        node-version: '22'  # Use the version of Node.js your project requires
+        ssh-private-key: ${{ secrets.GCP_SSH_KEY }}
 
-    - name: Install dependencies
+    - name: Install Node.js and PM2
       run: |
         curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
         sudo apt-get install -y nodejs
         sudo npm install -g pm2
+
     - name: Deploy to GCP VM
       uses: appleboy/ssh-action@v0.1.7
       with:
-        host: ${{ secrets.GCP_VM_IP }}  # GCP VM IP address stored in secrets
-        username: ${{ secrets.GCP_VM_USER }}  # SSH user name stored in secrets
-        key: ${{ secrets.GCP_SSH_KEY }}  # Private SSH key stored in secrets
-        port: 22  # Default SSH port
+        host: ${{ secrets.GCP_VM_IP }}
+        username: ${{ secrets.GCP_VM_USER }}
+        key: ${{ secrets.GCP_SSH_KEY }}
+        port: 22
         script: |
-          cd /home/kelompok3_bej12/platinum
-          git pull origin main  # Pull the latest code
-          npm install  # Install updated dependencies
-          npx sequelize-cli db:migrate #Migrate db if any
-          pm2 restart all  # Restart the application (if using PM2)
+          export PATH=$PATH:/usr/local/bin
+          cd /home/***/platinum
+          git pull origin main
+          npm install
+          npx sequelize-cli db:migrate
+          pm2 restart all
 
     - name: Notify Deployment Success
       run: echo "Deployment to GCP VM successful!"
