@@ -30,7 +30,6 @@ jobs:
         port: 22  # Default SSH port
         script: |
           cd /home/kelompok3_bej12/platinum
-          git config --global --add safe.directory /home/kelompok3_bej12/platinum
           git pull origin main  # Pull the latest code
           npm install  # Install updated dependencies
           npx sequelize-cli db:migrate #Migrate db if any
