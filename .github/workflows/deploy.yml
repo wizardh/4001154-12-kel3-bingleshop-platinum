@@ -39,9 +39,9 @@ jobs:
           export PATH=$PATH:/usr/local/bin
           cd /home/kelompok3_bej12/platinum
           git pull origin main
-          /usr/bin/npm install
-          /usr/bin/npx sequelize-cli db:migrate
-          /usr/local/bin/pm2 restart all
+          /home/kelompok3_bej12/.nvm/versions/node/v22.6.0/bin/npm install
+          /home/kelompok3_bej12/.nvm/versions/node/v22.6.0/bin/npx sequelize-cli db:migrate
+          /home/kelompok3_bej12/.nvm/versions/node/v22.6.0/bin/pm2 restart all
 
     - name: Notify Deployment Success
       run: echo "Deployment to GCP VM successful!"
