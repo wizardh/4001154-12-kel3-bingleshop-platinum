@@ -19,8 +19,10 @@ jobs:
         node-version: '22'  # Use the version of Node.js your project requires
 
     - name: Install dependencies
-      run: npm install
-
+      run: |
+        curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+        sudo apt-get install -y nodejs
+        sudo npm install -g pm2
     - name: Deploy to GCP VM
       uses: appleboy/ssh-action@v0.1.7
       with:
