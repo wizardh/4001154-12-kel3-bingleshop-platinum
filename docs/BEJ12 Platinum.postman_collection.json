@@ -16,11 +16,11 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaGkud2lyYWRoQGdtYWlsLmNvbSIsImlhdCI6MTcyMTY1ODY1NiwiZXhwIjoxNzIxNzQ1MDU2fQ.Hc2s9W2yIu1Qa0TNWZt1sxyPOuNtmxnDYTs50fmsjAw",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaGkud2lyYWRoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInZlcmlmaWVkIjp0cnVlLCJpYXQiOjE3MjMzNTkyOTUsImV4cCI6MTczMTk5OTI5NX0.S-bNsVngnTXi3f878l8caTLt1-68WKhIITuG3SZaoGA",
 								"type": "text"
 							}
 						],
-						"url": "localhost:2000/api/users"
+						"url": "http://34.101.72.251/api/users"
 					},
 					"response": []
 				},
@@ -30,17 +30,20 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "user-token",
-								"value": "35135103401sfadfas",
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaGkud2lyYWRoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInZlcmlmaWVkIjp0cnVlLCJpYXQiOjE3MjMzNTcwMDgsImV4cCI6MTcyMzQ0MzQwOH0.TOXRKp64CQfe2N7GXlSG2CJjaLNjwlH-ebgjWbp_1uo",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "localhost:2000/api/users/email/:email",
+							"raw": "http://34.101.72.251/api/users/email/:email",
+							"protocol": "http",
 							"host": [
-								"localhost"
+								"34",
+								"101",
+								"72",
+								"251"
 							],
-							"port": "2000",
 							"path": [
 								"api",
 								"users",
@@ -63,17 +66,20 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "user-token",
-								"value": "35135103401sfadfas",
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaGkud2lyYWRoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInZlcmlmaWVkIjp0cnVlLCJpYXQiOjE3MjMzNTcwMDgsImV4cCI6MTcyMzQ0MzQwOH0.TOXRKp64CQfe2N7GXlSG2CJjaLNjwlH-ebgjWbp_1uo",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "localhost:2000/api/users/id/:id",
+							"raw": "http://34.101.72.251/api/users/id/:id",
+							"protocol": "http",
 							"host": [
-								"localhost"
+								"34",
+								"101",
+								"72",
+								"251"
 							],
-							"port": "2000",
 							"path": [
 								"api",
 								"users",
@@ -83,7 +89,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "7"
+									"value": "253"
 								}
 							]
 						}
@@ -104,7 +110,7 @@
 								}
 							}
 						},
-						"url": "localhost:2000/api/auth/register"
+						"url": "http://34.101.72.251/api/auth/register"
 					},
 					"response": []
 				},
@@ -115,14 +121,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"adhi.wiradh@gmail.com\",\n    \"code\": \"817340\"\n}",
+							"raw": "{\n    \"email\": \"adhi.wiradh@gmail.com\",\n    \"code\": \"483620\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "localhost:2000/api/auth/verify"
+						"url": "http://34.101.72.251/api/auth/verify"
 					},
 					"response": []
 				},
@@ -140,7 +146,7 @@
 								}
 							}
 						},
-						"url": "localhost:2000/api/auth/login"
+						"url": "http://34.101.72.251/api/auth/login"
 					},
 					"response": []
 				},
@@ -148,17 +154,44 @@
 					"name": "user update",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaGkud2lyYWRoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInZlcmlmaWVkIjp0cnVlLCJpYXQiOjE3MjMzNTcwMDgsImV4cCI6MTcyMzQ0MzQwOH0.TOXRKp64CQfe2N7GXlSG2CJjaLNjwlH-ebgjWbp_1uo",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 8,\n    \"password\": \"123!@#asas\"\n}",
+							"raw": "{\n    \"password\": \"123!@#asas\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "localhost:2000/api/users/id/1"
+						"url": {
+							"raw": "http://34.101.72.251/api/users/id/:id",
+							"protocol": "http",
+							"host": [
+								"34",
+								"101",
+								"72",
+								"251"
+							],
+							"path": [
+								"api",
+								"users",
+								"id",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "246"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -174,11 +207,14 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:2000/api/users/id/:id",
+							"raw": "http://34.101.72.251/api/users/id/:id",
+							"protocol": "http",
 							"host": [
-								"localhost"
+								"34",
+								"101",
+								"72",
+								"251"
 							],
-							"port": "2000",
 							"path": [
 								"api",
 								"users",
@@ -199,8 +235,14 @@
 					"name": "items",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": "localhost:2000/api/items"
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaGkud2lyYWRoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInZlcmlmaWVkIjp0cnVlLCJpYXQiOjE3MjMzNTkyOTUsImV4cCI6MTczMTk5OTI5NX0.S-bNsVngnTXi3f878l8caTLt1-68WKhIITuG3SZaoGA",
+								"type": "text"
+							}
+						],
+						"url": "http://34.101.72.251/api/items"
 					},
 					"response": []
 				},
@@ -208,13 +250,22 @@
 					"name": "items by id",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaGkud2lyYWRoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInZlcmlmaWVkIjp0cnVlLCJpYXQiOjE3MjMzNTkyOTUsImV4cCI6MTczMTk5OTI5NX0.S-bNsVngnTXi3f878l8caTLt1-68WKhIITuG3SZaoGA",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "localhost:2000/api/items/:id",
+							"raw": "http://34.101.72.251/api/items/:id",
+							"protocol": "http",
 							"host": [
-								"localhost"
+								"34",
+								"101",
+								"72",
+								"251"
 							],
-							"port": "2000",
 							"path": [
 								"api",
 								"items",
@@ -223,7 +274,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "6"
+									"value": "1"
 								}
 							]
 						}
@@ -234,7 +285,13 @@
 					"name": "items create",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaGkud2lyYWRoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInZlcmlmaWVkIjp0cnVlLCJpYXQiOjE3MjMzNTkyOTUsImV4cCI6MTczMTk5OTI5NX0.S-bNsVngnTXi3f878l8caTLt1-68WKhIITuG3SZaoGA",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"name\" : \"POCO F5 Pro\",\n    \"price\": 5000000,\n    \"image\": \"https://res.cloudinary.com/dm3myqxdy/image/upload/v1722438321/zfbmtmv3n1djuoj7tku2.jpg\"\n}",
@@ -244,7 +301,7 @@
 								}
 							}
 						},
-						"url": "localhost:2000/api/items"
+						"url": "http://34.101.72.251/api/items"
 					},
 					"response": []
 				},
@@ -263,11 +320,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:2000/api/items/:id",
+							"raw": "http://34.101.72.251/api/items/:id",
+							"protocol": "http",
 							"host": [
-								"localhost"
+								"34",
+								"101",
+								"72",
+								"251"
 							],
-							"port": "2000",
 							"path": [
 								"api",
 								"items",
@@ -298,11 +358,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:2000/api/items/:id",
+							"raw": "http://34.101.72.251/api/items/:id",
+							"protocol": "http",
 							"host": [
-								"localhost"
+								"34",
+								"101",
+								"72",
+								"251"
 							],
-							"port": "2000",
 							"path": [
 								"api",
 								"items",
@@ -322,8 +385,14 @@
 					"name": "orders",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": "localhost:2000/api/orders"
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaGkud2lyYWRoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInZlcmlmaWVkIjp0cnVlLCJpYXQiOjE3MjI4NjM0NjEsImV4cCI6MTcyMjk0OTg2MX0.5o_kzG8DLd8EXyOi0T6IfyigI6KoxDY4nfg-CVFWESI",
+								"type": "text"
+							}
+						],
+						"url": "http://34.101.72.251/api/orders"
 					},
 					"response": []
 				},
@@ -333,11 +402,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:2000/api/orders/:id",
+							"raw": "http://34.101.72.251/api/orders/:id",
+							"protocol": "http",
 							"host": [
-								"localhost"
+								"34",
+								"101",
+								"72",
+								"251"
 							],
-							"port": "2000",
 							"path": [
 								"api",
 								"orders",
@@ -357,17 +429,23 @@
 					"name": "orders create",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaGkud2lyYWRoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInZlcmlmaWVkIjp0cnVlLCJpYXQiOjE3MjI4NjM0NjEsImV4cCI6MTcyMjk0OTg2MX0.5o_kzG8DLd8EXyOi0T6IfyigI6KoxDY4nfg-CVFWESI",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_id\" :  1,\n    \"item_id\": 5,\n    \"qty\": 2\n}",
+							"raw": "{\n    \"user_id\" :  3,\n    \"item_id\": 1,\n    \"qty\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "localhost:2000/api/orders"
+						"url": "http://34.101.72.251/api/orders"
 					},
 					"response": []
 				},
@@ -386,11 +464,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:2000/api/orders/:id",
+							"raw": "http://34.101.72.251/api/orders/:id",
+							"protocol": "http",
 							"host": [
-								"localhost"
+								"34",
+								"101",
+								"72",
+								"251"
 							],
-							"port": "2000",
 							"path": [
 								"api",
 								"orders",
@@ -421,11 +502,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:2000/api/orders/:id",
+							"raw": "http://34.101.72.251/api/orders/:id",
+							"protocol": "http",
 							"host": [
-								"localhost"
+								"34",
+								"101",
+								"72",
+								"251"
 							],
-							"port": "2000",
 							"path": [
 								"api",
 								"orders",
@@ -445,18 +529,24 @@
 					"name": "file upload",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaGkud2lyYWRoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInZlcmlmaWVkIjp0cnVlLCJpYXQiOjE3MjI4NjM0NjEsImV4cCI6MTcyMjk0OTg2MX0.5o_kzG8DLd8EXyOi0T6IfyigI6KoxDY4nfg-CVFWESI",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/Users/aya/Downloads/poco5.jpg"
+									"src": []
 								}
 							]
 						},
-						"url": "localhost:2000/api/file/upload"
+						"url": "http://34.101.72.251/api/file/upload"
 					},
 					"response": []
 				}
